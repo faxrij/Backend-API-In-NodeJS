@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const multer = require('multer');
 const checkAuth = require('../middleware/check-auth');
-
+const checkAdmin = require('../middleware/check-admin');
 //IT IS WHERE WE STORE FILES
 
 const storage = multer.diskStorage({
