@@ -45,7 +45,7 @@ router.get("/", (req, res, next) => {
 						request: {
 							type: "GET",
 							description: "To get more detailed info",
-							url: "http://localhost:3000/todo/" + doc._id,
+							url: "https://todo2-f810.onrender.com/todo" + doc._id,
 						},
 					};
 				}),
@@ -83,7 +83,7 @@ router.post("/", (req, res, next) => {
 				request: {
 					type: "GET",
 					description: "To get more detailed info",
-					url: "http://localhost:3000/todo/" + result._id,
+					url: "https://todo2-f810.onrender.com/todo/" + result._id,
 				},
 			});
 		})
@@ -141,7 +141,7 @@ router.get("/:todoId", (req, res, next) => {
 				Todo: order,
 				request: {
 					type: "GET",
-					url: "http://localhost:3000/todo",
+					url: "https://todo2-f810.onrender.com/todo/",
 				},
 			});
 		})
@@ -164,7 +164,7 @@ router.delete("/:todoId", (req, res, next) => {
 				request: {
 					type: "POST",
 					description: "To create more todo",
-					url: "http://localhost:3000/todo/",
+					url: "https://todo2-f810.onrender.com/todo",
 				},
 			});
 		})
