@@ -109,10 +109,10 @@ router.post("/:todoId", (req, res, next) => {
 
                 return res.status(200).json({
 					message: "TOdo is found",
-                    changedVarible : {
-                      order.done = req.body.done
+                    // changedVarible : {
+                    // //   order.done = req.body.done
 
-                    }
+                    // }
 				});
                 
 			}
