@@ -95,35 +95,17 @@ router.post("/", (req, res, next) => {
 		});
 });
 
-router.post("/:todoId", (req, res, next) => {
-	todo
-		.findById(req.params.todoId)
-		.exec()
-		.then((order) => {
-			if (!order) {
-				return res.status(404).json({
-					message: "TOdo not found"
-				});
-			} else {
-                // json = JSON.parse(order);
-
-                return res.status(200).json({
-					message: "TOdo is found",
-                    // changedVarible : {
-                    // //   order.done = req.body.done
-
-                    // }
-				});
-                
-			}
-		})
-        .catch((err) => {
-            console.log("FGELDI")
-
-			res.status(500).json({
-				error: err,
-			});
-		});;
+router.put("/:todoId", (req, res, next) => {
+	const id = req.params.todoId;
+	const update = req.body;
+	todo.findByIdAndUpdate(id, update, { new: true }, (error, todo) => {
+		if (error) {
+			console.error(error);
+			res.status(500).send(error);
+			return;
+		}
+		res.json(todo);
+	});
 });
 
 router.get("/:todoId", (req, res, next) => {
